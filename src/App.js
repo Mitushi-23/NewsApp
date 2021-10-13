@@ -12,7 +12,7 @@ const App = ()=> {
   const [progress, setProgress] = useState(0)
  
     return (
-      <div>
+      <div className="bg-dark">
         <Router>
         <NavBar/> 
         <LoadingBar

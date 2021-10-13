@@ -51,11 +51,21 @@ const News = (props) => {
   return (
     <>
       <h1
-        className="text-center"
-        style={{ margin: '35px 0px', marginTop: '90px' }}
+        className="text-center text-light"
+        style={{ margin: '35px 0px', marginTop: '15%', marginBottom: '20px' }}
       >
         NewsMonkey - Top {capitalizeFirstLetter(props.category)} Headlines
       </h1>
+      <div
+        style={{
+          borderBottomStyle: 'solid',
+          borderBottomColor: '#ffc107',
+          borderBottomWidth: 2,
+          marginLeft: '40%',
+          marginRight: '40%',
+          marginBottom: '5%',
+        }}
+      ></div>
       {loading && <Spinner />}
       <InfiniteScroll
         style={{ overflow: 'hidden' }}
@@ -64,7 +74,7 @@ const News = (props) => {
         hasMore={articles.length !== totalResults}
         loader={<Spinner />}
       >
-        <div className="container">
+        <div className="container my-3">
           <div className="row">
             {articles.map((element) => {
               return (
