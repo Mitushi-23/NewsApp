@@ -6,9 +6,7 @@ import InfiniteScroll from 'react-infinite-scroll-component'
 
 const News = (props)=> {
  
- const capitalizeFirstLetter = (string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1)
-  }
+ 
   const [articles, setaticles] = useState([])
   const [loading, setloading] = useState(true)
   const [page, setpage] = useState(1)
@@ -17,7 +15,9 @@ const News = (props)=> {
     // document.title = `${capitalizeFirstLetter(
     //   props.category,
     // )} - NewsApp`
-  
+    const capitalizeFirstLetter = (string) => {
+      return string.charAt(0).toUpperCase() + string.slice(1)
+    }
 
  const updateNews=async()=> {
     props.setProgress(10)
@@ -51,7 +51,7 @@ const News = (props)=> {
 
   const fetchMoreData = async () => {
     setpage(page+1)
-    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${this.state.page}&pageSize=${props.pageSize}`
+    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`
     let data = await fetch(url)
     let parsedData = await data.json()
     setaticles(articles.concat(parsedData.articles))
@@ -110,7 +110,7 @@ const News = (props)=> {
   }
 
 
-export default News
+
 
 News.defaultProps = {
   country: 'in',
@@ -123,3 +123,4 @@ News.propTypes = {
   pageSize: PropTypes.number,
   category: PropTypes.string,
 }
+export default News
