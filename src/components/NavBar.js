@@ -12,7 +12,7 @@ export class NavBar extends Component {
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <div className="container-fluid">
             <NavLink className="navbar-brand fs-4" to="/">
-              NewsMonkey
+              NewsApp
             </NavLink>
             <button
               className="navbar-toggler"
