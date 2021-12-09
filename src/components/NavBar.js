@@ -1,5 +1,5 @@
 
-import '/home/mitushi/Documents/Manjaro_docs/React_js/NewsApp/src/Nav.css'
+import '../Nav.css'
 
 
 import React, { Component } from 'react'
